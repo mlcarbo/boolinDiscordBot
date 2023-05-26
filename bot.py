@@ -7,10 +7,7 @@ import os
 import sys
 import logging
 import random
-import importlib
 import glob
-from typing import Optional
-from modules import load_modules
 dotenv.load_dotenv()
 
 intents = discord.Intents.default()
@@ -34,7 +31,6 @@ class Client(commands.Bot):
 
 
     async def setup_hook(self):
-        print(self.cogs)
         await self.load_cogs()
 
     async def load_cogs(self, cogs_dir = None):
@@ -56,22 +52,8 @@ class Client(commands.Bot):
             else:
                 await self.load_extension(cog_name)
             print(cog_name)
-            print(self.cogs)
 
 
-    async def unload_cogs(self):
-        unloading = [ext for ext in self.extensions]
-        for ext in unloading:
-            print(ext)
-            await self.unload_extension("cogs.sed")
-
-
-'''
-@bot.event
-async def on_message(message: discord.Message):
-    print(message.content)
-    await bot.process_commands(message)
-'''
 
 client = Client()
 

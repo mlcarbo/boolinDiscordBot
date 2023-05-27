@@ -17,7 +17,7 @@ class Cog(commands.Cog):
 
 
     @commands.command(name=NAME, aliases=[], pass_context=True, brief=BRIEF, help=USAGE, description=DESCRIPTION)
-    async def lenny(self, ctx, *, message):
+    async def cmdname(self, ctx, *, message):
         """Provide Functionality"""
         pass
 

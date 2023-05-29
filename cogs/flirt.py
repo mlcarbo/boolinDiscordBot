@@ -55,8 +55,6 @@ class FlirtCog(commands.Cog):
     async def flirt(self, ctx, nick=None):
         body        = f'{choice(FLIRT_PHRASES)}'
         nick        = nick if nick else ctx.message.author.mention
-        print(nick)
-        print(body)
 
         await ctx.send(f'{nick} {body}')
 # Register
